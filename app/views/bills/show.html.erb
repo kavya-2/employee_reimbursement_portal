@@ -1,0 +1,22 @@
+<p>
+  <strong>Type:</strong>
+  <%= @bill.bill_type %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @bill.amount %>
+</p>
+
+<p>
+  <strong>Submitted Employee:</strong>
+  <%= @bill.employee.full_name %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @bill.employee.department %>
+</p>
+
+<%= link_to 'Edit', edit_bill_path(@bill), class: 'btn btn-warning' %> |
+<%= link_to 'Back', bills_path, class: 'btn btn-secondary' %>

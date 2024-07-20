@@ -1,0 +1,29 @@
+<h1>Employees</h1>
+
+<%= link_to 'New Employee', new_employee_path, class: 'btn btn-primary mb-3' %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Designation</th>
+      <th>Department</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee.full_name %></td>
+        <td><%= employee.designation %></td>
+        <td><%= employee.department %></td>
+        <td>
+          <%= link_to 'Show', employee, class: 'btn btn-secondary btn-sm' %>
+          <%= link_to 'Edit', edit_employee_path(employee), class: 'btn btn-warning btn-sm' %>
+          <%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,20 @@
+<%= form_with(model: bill) do |form| %>
+  <div class="field">
+    <%= form.label :employee_id %>
+     <%= form.collection_select :employee_id, Employee.all, :id, :id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.text_field :amount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bill_type %>
+    <%= form.select :bill_type, ['Food', 'Travel', 'Others'] %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
